@@ -2,6 +2,7 @@ var express 	= require('express'),
 	misc 		= require('./routes/misc'),
 	users 		= require('./routes/users'),
 	searchUsers	= require('./routes/searchUsers'),
+    categories  = require('./routes/categories'),
    	dummy 		= require('./routes/dummy');
    	//misc = require('./routes/misc');
 
@@ -20,6 +21,8 @@ app.configure('development', function () {
 app.get('/ping',misc.ping);
 app.get('/users/:userId', users.get);
 app.post('/users/search/:admin', searchUsers.post);
+
+app.get('/categories/:categoryId',categories.get);
 
 
 //app.get('/catalog',catalog.get);
